@@ -9,7 +9,9 @@
     "purescript-strings": "^2.1.0",
     "purescript-tuples": "^3.2.0",
     "purescript-sets": "^2.0.1",
-    "purescript-foldable-traversable": "^2.2.0"
+    "purescript-foldable-traversable": "^2.2.0",
+    "purescript-maps": "^2.1.2",
+    "purescript-maybe": "^2.1.1"
   },
   "devDependencies": {
     "purescript-either": "^2.2.1",
