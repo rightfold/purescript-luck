@@ -41,8 +41,9 @@ fromString' ('(' : cs) = go Nil cs
   where
   go :: List Sexp -> List Char -> Either String (Tuple Sexp (List Char))
   go acc (')' : cs') = Right <<< Tuple `flip` cs' <<< List $ List.reverse acc
-  go acc cs' = fromString' cs' >>= case _ of
-    Tuple value cs'' -> go (value : acc) cs''
+  go acc cs' = case fromString' cs' of
+    Left e -> Left e
+    Right (Tuple value cs'') -> go (value : acc) cs''
 fromString' _ = Left "Unexpected token"
 
 isSpace :: Char -> Boolean
